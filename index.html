@@ -10,27 +10,47 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="cursor-trail"></div>
+  <div class="bg-blobs">
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+  </div>
+  <div class="cursor-trail" id="cursorTrail"></div>
   <div class="floating-trolls" id="floatingTrolls"></div>
+  <div class="marquee-wrap">
+    <div class="marquee">🔥 СЕРВЕР УМЕР — ПЕРЕЗАЙДИ ЧЕРЕЗ 100 ЛЕТ 🔥 НЕ ЛАГАЕТ* *ЛАГАЕТ 🔥 АДМИН СПИТ С 2012 🔥 Пинг: 9999 ms 🔥</div>
+    <div class="marquee" aria-hidden="true">🔥 СЕРВЕР УМЕР — ПЕРЕЗАЙДИ ЧЕРЕЗ 100 ЛЕТ 🔥 НЕ ЛАГАЕТ* *ЛАГАЕТ 🔥 АДМИН СПИТ С 2012 🔥 Пинг: 9999 ms 🔥</div>
+  </div>
   <div class="rainbow-bar"></div>
+  <div class="fake-notification hidden" id="fakeNotification">
+    <span class="fake-notif-close" id="fakeNotifClose">×</span>
+    <strong>У вас 1 новое сообщение!</strong> Админ написал: «бан на 999 лет»
+  </div>
   <header class="header">
     <div class="logo-spin">
       <span class="logo">🟩 ДРИЩКРАФТ 🟩</span>
     </div>
     <p class="tagline">Сервер, где твой FPS — как наш админ — всегда 0</p>
+    <div class="online-fake">
+      <span class="online-dot"></span>
+      <span id="onlineCount">0</span> игроков онлайн (вру)
+    </div>
     <div class="trollface-hero">
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" class="troll-img spin-slow" width="120" height="120">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" class="troll-img spin-slow clickable-troll" width="120" height="120" id="heroTroll">
     </div>
   </header>
   <nav class="nav">
     <a href="#about" class="nav-link">Чо за сервер</a>
     <a href="#rules" class="nav-link">Правила (никто не читает)</a>
     <a href="#ip" class="nav-link">Айпи (нажми и плачь)</a>
+    <a href="#memes" class="nav-link">Мемы</a>
     <a href="#staff" class="nav-link">Админы-овощи</a>
     <a href="#download" class="nav-link">Скачать вирус</a>
   </nav>
   <main>
-    <section id="about" class="section section-about">
+    <section id="about" class="section section-about section-color-1">
       <h2 class="section-title spin-text">Чо это за сервер вообще?</h2>
       <div class="cube-wrap">
         <div class="cube">
@@ -43,36 +63,79 @@
         </div>
       </div>
       <p class="about-text">Мы — самый левый сервер в СНГ. Лагаем с 2012 года. Админ спит, моды кривые, зато бесплатно (потому что платить нечем). Приходи — подарим тебе бан за «привет».</p>
+      <div class="about-memes">
+        <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" class="about-meme-pic" width="60" height="60">
+        <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge" class="about-meme-pic" width="60" height="60">
+      </div>
       <div class="meme-row">
         <span class="meme-badge">100% БЕЗ ВИРУСОВ*</span>
         <span class="meme-badge">*это враньё</span>
       </div>
     </section>
-    <section id="rules" class="section section-rules">
+    <section id="rules" class="section section-rules section-color-2">
       <h2 class="section-title">Правила сервера (обязательно к прочтению)</h2>
-      <ul class="rules-list">
-        <li>Не читерить (чит — наше второе имя)</li>
-        <li>Не оскорблять админа (он и так плачет)</li>
-        <li>Не спрашивать «когда обновление» (никогда)</li>
-        <li>Не писать в поддержку (её нет)</li>
-        <li>Обязательно нажать кнопку «Скачать вирус» внизу</li>
+      <ul class="rules-list" id="rulesList">
+        <li data-text="Не читерить (чит — наше второе имя)">Не читерить (чит — наше второе имя)</li>
+        <li data-text="Не оскорблять админа (он и так плачет)">Не оскорблять админа (он и так плачет)</li>
+        <li data-text="Не спрашивать «когда обновление» (никогда)">Не спрашивать «когда обновление» (никогда)</li>
+        <li data-text="Не писать в поддержку (её нет)">Не писать в поддержку (её нет)</li>
+        <li data-text="Обязательно нажать кнопку «Скачать вирус» внизу">Обязательно нажать кнопку «Скачать вирус» внизу</li>
       </ul>
       <div class="doge-box">
         <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge" class="doge-img" width="80" height="80">
         <p>such rules. very serious. wow.</p>
       </div>
     </section>
-    <section id="ip" class="section section-ip">
+    <section id="ip" class="section section-ip section-color-3">
       <h2 class="section-title">Подключайся (или не подключайся)</h2>
       <div class="ip-block">
         <p class="ip-label">Наш айпи:</p>
         <p class="ip-value" id="fakeIp">загрузка...</p>
         <button type="button" class="btn-copy" id="copyIp">Скопировать и плакать</button>
+        <button type="button" class="btn-connect" id="btnConnect">Подключиться к серверу</button>
       </div>
       <p class="ip-note">Порт: 25565 (как у всех, мы не оригинальные)</p>
       <div class="version-badge">Версия: 1.0.0 (какая была при создании — такая и осталась)</div>
+      <div class="anticheat-block">
+        <h3 class="anticheat-title">Проверка на читера (бесплатно)</h3>
+        <div class="anticheat-bar-wrap">
+          <div class="anticheat-bar" id="anticheatBar" style="width: 0%"></div>
+        </div>
+        <p class="anticheat-status" id="anticheatStatus">Нажми «Проверить» — мы никого не ловим</p>
+        <button type="button" class="btn-anticheat" id="btnAnticheat">Проверить меня</button>
+      </div>
     </section>
-    <section id="staff" class="section section-staff">
+    <section id="memes" class="section section-memes section-color-2">
+      <h2 class="section-title">Галерея криповых мемов</h2>
+      <p class="memes-intro">Наши спонсоры и лица сервера (нет)</p>
+      <div class="meme-gallery">
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt="troll" width="120" height="120">
+          <span>Админ когда банит</span>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge" width="120" height="120">
+          <span>such server. very lag. wow.</span>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/010/043/successkid.jpg" alt="success" width="120" height="120">
+          <span>Зайшёл на сервер с первого раза</span>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/000/554/rageguy.jpg" alt="rage" width="120" height="120">
+          <span>Когда лагает 5 часов</span>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/011/365/Derp.png" alt="derp" width="120" height="120">
+          <span>Хелпер отвечает в саппорт</span>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt="troll2" width="120" height="120">
+          <span>«Сервер без донатов»</span>
+        </div>
+      </div>
+    </section>
+    <section id="staff" class="section section-staff section-color-4">
       <h2 class="section-title">Наша команда (овощной отдел)</h2>
       <div class="staff-grid">
         <div class="staff-card">
@@ -92,12 +155,16 @@
         </div>
       </div>
     </section>
-    <section id="download" class="section section-download">
+    <section id="download" class="section section-download section-color-5">
       <h2 class="section-title">Скачать клиент (нет)</h2>
       <div class="download-zone">
         <button type="button" class="btn-virus" id="btnVirus">СКАЧАТЬ ВИРУС БЕСПЛАТНО</button>
+        <button type="button" class="btn-runaway" id="btnRunaway">Нажми меня (попробуй)</button>
+        <button type="button" class="btn-dont-click" id="btnDontClick">НЕ НАЖИМАЙ СЮДА</button>
+        <button type="button" class="btn-get-admin" id="btnGetAdmin">Получить админа бесплатно</button>
         <p class="download-disclaimer">Нажимая кнопку, вы соглашаетесь отдать нам свою душу и ПК</p>
       </div>
+      <div id="confettiContainer" class="confetti-container"></div>
       <div id="virusModal" class="modal hidden">
         <div class="modal-content spin-once">
           <span class="modal-close" id="modalClose">&times;</span>
@@ -106,14 +173,46 @@
           <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" class="modal-troll" width="80" height="80">
         </div>
       </div>
+      <div id="banModal" class="modal hidden">
+        <div class="modal-content modal-ban">
+          <span class="modal-close" id="banModalClose">&times;</span>
+          <h3>Ты забанен</h3>
+          <p>Причина: существование. Срок: навсегда.</p>
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/000/554/rageguy.jpg" alt="rage" class="modal-meme" width="100" height="100">
+        </div>
+      </div>
+      <div id="adminModal" class="modal hidden">
+        <div class="modal-content spin-once">
+          <span class="modal-close" id="adminModalClose">&times;</span>
+          <h3>Админ — это не про тебя</h3>
+          <p>Но вот тебе медалька за попытку: 🥉</p>
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" class="modal-troll" width="80" height="80">
+        </div>
+      </div>
     </section>
   </main>
+  <div id="connectingOverlay" class="connecting-overlay hidden">
+    <div class="connecting-box">
+      <div class="connecting-dirt"></div>
+      <p class="connecting-text">Подключение к minecraft.vrfct.ru...</p>
+      <div class="connecting-bar-wrap">
+        <div class="connecting-bar" id="connectingBar"></div>
+      </div>
+      <p class="connecting-sub" id="connectingSub">Проверка версии...</p>
+    </div>
+  </div>
   <footer class="footer">
+    <div class="footer-memes">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg" alt=":" width="40" height="40">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge" width="40" height="40">
+    </div>
     <div class="footer-rainbow">ДРИЩКРАФТ © 2012—2099. Все права никому не нужны.</div>
     <p>Сделано на коленке за 5 минут. Как и сам сервер.</p>
-    <p class="footer-ip">minecraft2.vrfct.ru</p>
+    <p class="footer-ip">minecraft.vrfct.ru</p>
   </footer>
   <div class="konami-toast hidden" id="konamiToast">+1000 к респекту. Ты ввёл конями код.</div>
+  <div class="random-toast hidden" id="randomToast"></div>
+  <div id="spawnTrolls"></div>
   <script src="script.js"></script>
 </body>
 </html>
