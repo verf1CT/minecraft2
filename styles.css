@@ -15,10 +15,14 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
+  font-style: normal;
+  font-weight: 700;
   background: var(--bg-dark);
   color: var(--text);
   min-height: 100vh;
@@ -262,7 +266,7 @@ body::after {
 }
 
 .logo {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: clamp(1rem, 4vw, 1.8rem);
   color: var(--accent-lime);
   text-shadow: 0 0 20px var(--meme-green);
@@ -405,7 +409,7 @@ main {
 }
 
 .section-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: clamp(0.7rem, 2.5vw, 1rem);
   color: var(--accent-yellow);
   margin-bottom: 1rem;
@@ -452,7 +456,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: 0.6rem;
   background: linear-gradient(135deg, var(--meme-green), #238636);
   border: 2px solid var(--accent-lime);
@@ -577,7 +581,7 @@ main {
 }
 
 .ip-value {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: clamp(0.6rem, 2vw, 1rem);
   color: var(--accent-lime);
   word-break: break-all;
@@ -592,7 +596,7 @@ main {
 }
 
 .btn-copy {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.6rem 1.2rem;
   background: linear-gradient(180deg, #ff6b6b, #c0392b);
@@ -642,7 +646,7 @@ main {
 }
 
 .staff-card h3 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: 0.6rem;
   color: var(--accent-lime);
   margin-bottom: 0.3rem;
@@ -661,7 +665,7 @@ main {
 }
 
 .btn-virus {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: clamp(0.5rem, 2vw, 0.7rem);
   padding: 1rem 1.5rem;
   background: linear-gradient(180deg, #ff0000, #8b0000);
@@ -685,7 +689,7 @@ main {
 .btn-runaway {
   display: inline-block;
   margin: 1rem 0 0;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.5rem 1rem;
   background: linear-gradient(180deg, #00ffff, #0099cc);
@@ -770,7 +774,7 @@ main {
 .btn-connect {
   display: block;
   margin: 0.8rem auto 0;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.5rem 1rem;
   background: linear-gradient(180deg, #3fb950, #238636);
@@ -795,7 +799,7 @@ main {
 }
 
 .anticheat-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: 0.5rem;
   color: #ff7eb6;
   margin-bottom: 0.5rem;
@@ -827,7 +831,7 @@ main {
 .btn-anticheat {
   display: block;
   margin: 0 auto;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.4rem 0.8rem;
   background: linear-gradient(180deg, #79c0ff, #58a6ff);
@@ -889,7 +893,7 @@ main {
 .btn-dont-click {
   display: inline-block;
   margin: 0.8rem 0.5rem 0;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.5rem 1rem;
   background: linear-gradient(180deg, #8b0000, #500000);
@@ -907,7 +911,7 @@ main {
 .btn-get-admin {
   display: inline-block;
   margin: 0.8rem 0.5rem 0;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   font-weight: 700;
   padding: 0.5rem 1rem;
   background: linear-gradient(180deg, #feca57, #e6b800);
@@ -963,7 +967,7 @@ main {
 }
 
 .connecting-text {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: 0.6rem;
   color: #7ee787;
   margin-bottom: 1rem;
@@ -1097,7 +1101,7 @@ main {
 }
 
 .footer-ip {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', monospace;
   font-size: 0.6rem;
   color: var(--accent-lime);
   margin-top: 1rem;

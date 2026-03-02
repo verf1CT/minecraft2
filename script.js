@@ -268,6 +268,7 @@
       for (var i = 0; i < 3; i++) {
         var img = document.createElement('img');
         img.src = trollUrl;
+        img.referrerPolicy = 'no-referrer';
         img.className = 'spawn-troll';
         img.style.left = (e.clientX + (Math.random() * 80 - 40)) + 'px';
         img.style.top = (e.clientY + (Math.random() * 80 - 40)) + 'px';
@@ -356,6 +357,7 @@
     for (var i = 0; i < 6; i++) {
       var img = document.createElement('img');
       img.src = trollUrl;
+      img.referrerPolicy = 'no-referrer';
       img.alt = '';
       img.style.left = (10 + Math.random() * 80) + '%';
       img.style.top = (10 + Math.random() * 80) + '%';
